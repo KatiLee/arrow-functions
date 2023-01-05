@@ -139,14 +139,20 @@ let objectLit = () => {
 console.log(objectLit());
 
 
-let sumAndProduct = function(a, b) {
-  let sum = a + b;
-  let product = a * b;
-  return [sum, product];
+// let sumAndProduct = function(a, b) {
+//   let sum = a + b;
+//   let product = a * b;
+//   return [sum, product];
+// };
+
+let sumAndProduct = (a, b) => {
+    let sum = a + b;
+    let product = a * b;
+    return [sum, product];
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sumAndProduct(3, 9));
+console.log(sumAndProduct(3, 9));
 
 
 // let message = function(name) {
@@ -182,18 +188,22 @@ Student.prototype.greeting = function() {
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
+console.log(joe.greeting());
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
 
 
-Student.courseName = function() {
-  return 'This student is enrolled in Code 301.';
-};
+// Student.courseName = function() {
+//   return 'This student is enrolled in Code 301.';
+// };
+
+Student.courseName = () => {
+    return `This student is enrolled in Code 301.`
+}
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+console.log(Student.courseName());
 
 
 
@@ -204,17 +214,18 @@ Student.prototype.scope = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scope();
+joe.scope();
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scopeArrow();
+joe.scopeArrow();
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+//  It refers to the object joe and calls out the three parameters.
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+//  It refers to the window, since arrow functions don't bind their own scope but inherit from 
+//  a parent.
 // 3. Explain why "this" is different when an arrow function is used.
-//vbg
+//  Arrow functions do not have their own 'this.'
